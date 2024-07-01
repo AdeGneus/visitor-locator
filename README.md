@@ -2,9 +2,7 @@
 
 ## A basic web server that greets the user
 
-## Usage: send a GET request to `http://example.com/api/hello?visitor_name="Mark"` (where Mark is a visitor's name)
-
-## Response
+Usage: send a GET request to `http://example.com/api/hello?visitor_name="Mark"` (where Mark is a visitor's name)
 
 ```json
 {

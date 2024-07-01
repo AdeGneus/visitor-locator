@@ -5,12 +5,12 @@ const app = express();
 
 app.set("trust proxy", true);
 
-app.use("/api/hello", router);
+app.use("/api", router);
 
 app.all("*", (req, res) => {
   res.status(404).json({
     status: "fail",
-    message: `Can't find ${req.originalUrl} on this server!`,
+    message: `Can't find ${req.originalUrl} on this server! Use /api/hello instead`,
   });
 });
 

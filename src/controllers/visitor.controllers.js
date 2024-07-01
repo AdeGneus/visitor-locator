@@ -18,7 +18,6 @@ exports.greet = async (req, res) => {
         "Let's get to know you visitor. Kindly enter your name as a query",
     });
   }
-  console.log(visitorIp);
 
   try {
     const response = await axios.get(
