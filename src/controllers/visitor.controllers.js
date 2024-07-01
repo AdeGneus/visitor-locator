@@ -9,7 +9,7 @@ const getIPv4 = (ip) => {
 
 exports.greet = async (req, res) => {
   const visitor = req.query["visitor_name"];
-  const visitorIp = getIPv4(req.ip);
+  const visitorIp = getIPv4(req.headers["x-forwarded-for"] || req.ip);
 
   if (!visitor) {
     return res.status(400).json({
@@ -44,7 +44,7 @@ exports.greet = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       status: "fail",
-      message: error,
+      message: "Error fetching data",
     });
   }
 };
